@@ -11,7 +11,7 @@ string[] words = {
 Trie dictionary = InitializeTrie(words);
 // SearchWord();
 // PrefixAutocomplete();
-// DeleteWord();
+DeleteWord();
 // GetSpellingSuggestions();
 
 // This method initializes a Trie data structure with a given list of words.
@@ -71,14 +71,14 @@ void DeleteWord()
         {
             break;
         }
-        /*
+        
         if (input != null && dictionary.Search(input))
         {
             dictionary.Delete(input);
             Console.WriteLine($"Deleted \"{input}\" from dictionary\n");
             PrintTrie(dictionary);
         }
-        */
+        
         else
         {
             Console.WriteLine($"Did not find \"{input}\" in dictionary");
