@@ -11,7 +11,7 @@ string[] words = {
 Trie dictionary = InitializeTrie(words);
 // SearchWord();
 // PrefixAutocomplete();
-DeleteWord();
+// DeleteWord();
 // GetSpellingSuggestions();
 
 // This method initializes a Trie data structure with a given list of words.
@@ -203,9 +203,18 @@ void PrintTrie(Trie trie)
 {
     Console.WriteLine("The dictionary contains the following words:");
     List<string> words = trie.GetAllWords();
+    int count = 0;
     foreach (string word in words)
     {
-        Console.Write($"{word}, ");
+        Console.Write($"{word.PadRight(20)}");
+        count++;
+        if (count % 5 == 0)
+        {
+            Console.WriteLine();
+        }
     }
-    Console.WriteLine();
+    if (count % 5 != 0) // For the last line if it has less than 5 words
+    {
+        Console.WriteLine();
+    }
 }
