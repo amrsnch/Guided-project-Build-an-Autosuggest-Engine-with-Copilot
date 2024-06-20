@@ -54,7 +54,12 @@ public class Trie
         return true;
     }
     
-    public List<string> AutoSuggest(string prefix)
+    /// <summary>
+    /// Retrieves a list of suggested words based on the given prefix.
+    /// </summary>
+    /// <param name="prefix">The prefix to search for.</param>
+    /// <returns>A list of suggested words.</returns>
+    /// public List<string> AutoSuggest(string prefix)
     {
         TrieNode currentNode = root;
         foreach (char c in prefix)
