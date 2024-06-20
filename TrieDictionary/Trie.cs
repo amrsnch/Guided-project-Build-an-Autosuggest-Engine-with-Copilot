@@ -30,18 +30,26 @@ public class Trie
     public bool Insert(string word)
     {
         TrieNode current = root;
+
+        // For each character in the word, check if the current node has a child with that character.
+        // If not, create a new child node with that character.
         foreach (char c in word)
         {
+            //If the current node does not have a child with the character, create a new child node.
             if (!current.HasChild(c))
             {
+                // Create a new child node with the character.
                 current.Children[c] = new TrieNode(c);
             }
             current = current.Children[c];
         }
         if (current.IsEndOfWord)
         {
+            // The word is already in the trie.
             return false;
         }
+
+        //Mark the end of the word.
         current.IsEndOfWord = true;
         return true;
     }
